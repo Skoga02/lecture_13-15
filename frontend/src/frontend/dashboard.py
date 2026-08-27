@@ -1,7 +1,16 @@
 import streamlit as st
 import httpx
 
+# To run this app, 
+# Stand in frontend/src/frontend
+# Command: uv run streamlit run dashboard.py
+
+
 def main():
     st.markdown("# PokeDash")
 
-    stats = httpx.get
+    stats = httpx.get("http://127.0.0.1:8000/pokemons/stats", timeout=30).json()
+    st.dataframe(stats)
+
+if __name__ == "__main__":
+    main()
