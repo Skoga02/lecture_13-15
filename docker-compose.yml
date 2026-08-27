@@ -1,10 +1,10 @@
 # To this run docker container 
-# Command: docker compose up 
+# Command: docker compose up -d
 services:
   backend:
     container_name: backend
     build:
       context: .
-      dockerfile: dockerfiles/backcend.dockerfile
+      dockerfile: dockerfiles/backend.dockerfile
     ports:
-      -"8000:8000"
+      - "8000:8000"
